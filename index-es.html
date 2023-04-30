@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cómo rellenar un cheque en Francia</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="remplir-cheque.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index-fr.html">Français</a>
+        |
+        <a href="index-en.html">English</a>
+        |
+        <a href="index-es.html">Español</a>
+      </nav>
+    </header>
+    <article>
+      <h1>Cómo rellenar un cheque en Francia</h1>
+      <section id="index">
+        <p>
+          A diferencia de otros países donde pueden haber quedado en desuso, los
+          cheques se usan con frecuencia en Francia. Las chequeras se llaman
+          «Chéquier» o «Carnet de chèques», y la mayoría de los bancos la ofrece
+          a sus clientes de forma gratuita. Los cheques se llaman «chèque» y
+          están vinculados a tu cuenta bancaria, pero sólo son válidos cuando se
+          rellenan correctamente y los firma el dueño de la cuenta bancaria.
+        </p>
+        <p>
+          Escribir un cheque francés es fácil, siempre y cuando sigas los pasos
+          correctamente:
+        </p>
+        <ol>
+          <li><a href="#step1">Pon la cantidad a pagar</a></li>
+          <li><a href="#step2">Pon la cantidad con palabras</a></li>
+          <li><a href="#step3">Pon el nombre del beneficiario</a></li>
+          <li><a href="#step4">Indica el lugar y la fecha</a></li>
+          <li><a href="#step5">Firma tu cheque</a></li>
+        </ol>
+      </section>
+      <section id="step1">
+        <h2><span class="step-number">1</span>Pon la cantidad a pagar</h2>
+        <p>
+          Hay un recuadro en la parte derecha del cheque en el que es necesario
+          poner la cantidad que deseas pagar. Sin dejar espacio a la izquierda,
+          escribe todos los dígitos. Si el número tiene decimales, usa una coma
+          como separador. Después, llena el resto del recuadro con una línea
+          horizontal para prevenir modificaciones.
+        </p>
+        <div class="cheque-paper">
+          <span class="printed-box">
+            <span
+              id="remplir-cheque-numeric"
+              class="handwritting handwritting-line"
+              >42,00</span
+            >
+          </span>
+          <span class="printed euro">€</span>
+        </div>
+        <p>
+          Puedes ver los ejemplos de esta página con una cantidad diferente:
+        </p>
+        <fieldset>
+          <legend>Simulador de escritura a mano</legend>
+          <label for="remplir-cheque-input">Cantidad a pagar:</label>
+          <input
+            id="remplir-cheque-input"
+            type="number"
+            step="0.01"
+            value="42"
+          />
+          €
+        </fieldset>
+      </section>
+      <section id="step2">
+        <h2><span class="step-number">2</span>Pon la cantidad con palabras</h2>
+        <p>
+          Debajo del logo del banco, el primer campo a rellenar dice
+          <b>«Payez contre ce chèque»</b> , que significa
+          <i>«pagar contra este cheque»</i>.
+        </p>
+        <p>
+          Ahí debes poner la cantidad en letras, empezando justo después del
+          texto mencionado y añadiendo una linea horizontal para llenar el
+          resto.
+        </p>
+        <div class="cheque-paper">
+          <span class="printed">Payez contre ce chèque </span>
+          <span
+            id="remplir-cheque-text"
+            class="handwritting printed-underline handwritting-line"
+            >quarente-deux euros</span
+          >
+        </div>
+        <p class="info">
+          Ten en cuenta que la mayoría de bancos aceptan cheques rellenados en
+          otros idiomas, incluso con números. Sin embargo, si alguien modifica
+          los números, es difícil demostrar la falsificación, así que esta guía
+          sigue las prácticas recomendadas para evitar esos fraudes.
+        </p>
+      </section>
+      <section id="step3">
+        <h2>
+          <span class="step-number">3</span>Pon el nombre del beneficiario
+        </h2>
+        <p>
+          La frase mencionada arriba va seguida de <b>«à»</b>, que significa
+          <i>«a»</i>, indicando a quien pagar la suma.
+        </p>
+        <p>
+          Debes poner el nombre de la persona o compañía que recibirá el pago.
+        </p>
+        <div class="cheque-paper">
+          <span class="printed">à</span>
+          <span class="handwritting printed-underline">OpenClassrooms</span>
+        </div>
+        <p class="info">
+          Nunca firmes un cheque sin poner el nombre del beneficiario. Si
+          alguien lo cobra con un nombre distinto, podría ser imposible
+          demostrar que has pagado la factura y que te pidan pagarla de nuevo.
+        </p>
+      </section>
+      <section id="step4">
+        <h2><span class="step-number">4</span>Indica el lugar y la fecha</h2>
+        <p>
+          Debajo hay un especio para tu firma, y cerca del espacio hay dos
+          campos a rellenar con el lugar y la fecha.
+        </p>
+        <p>
+          El lugar está indicado normalmente con <b>«À»</b> o <b>«Fait à»</b>.
+          Es la ciudad donde estás firmando el cheque, NO tu dirección.
+        </p>
+        <p>
+          La palabra <b>«le»</b> precede la fecha de la firma. Escribe la fecha
+          en la que vas a entregar el cheque al destinatario. con formato 
+          día/mes/año:
+        </p>
+        <div class="cheque-paper">
+          <p>
+            <span class="printed">Fait à </span>
+            <span class="handwritting printed-underline">Paris</span>
+          </p>
+          <p>
+            <span class="printed">le </span>
+            <span
+              id="remplir-cheque-date"
+              class="handwritting printed-underline"
+              >DD/MM/YYYY</span
+            >
+          </p>
+        </div>
+        <p class="info">
+          Recordatorio: Todos los cheques tienen una validez de 1 año y 8 días.
+          La ley prohíbe antedatarlos o posponerlos.
+        </p>
+      </section>
+      <section id="step5">
+        <h2><span class="step-number">5</span>Firma tu cheque</h2>
+        <p>
+          Antes de firmar, separa el cheque de la chequera. Esto evita que la
+          firma se marque en el cheque siguiente, ya que podría usarse para
+          falsificar tu firma si pierdes o te roban la chequera.
+        </p>
+        <p>
+          La firma debe ser la misma que registraste con el banco, ya que las
+          compararán durante la verificación.
+        </p>
+      </section>
+    </article>
+    <footer>
+      <p>Creado en 2021 - <a href="https://github.com/raranguren/remplir-un-cheque">Github</a></p>
+    </footer>     
+  </body>
+</html>

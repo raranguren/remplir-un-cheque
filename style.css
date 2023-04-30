@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;600;800&family=Roboto:wght@300&display=swap');
+
+:root {
+  --hovercolor: #ed9500;
+  --print-gray: #979797;
+  --default-bg: #ededed;
+  --text-blue: #001f3f;
+  --pen-blue: #0077ed;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: auto;
+  max-width: 700px;
+  background-color: var(--default-bg);
+}
+
+nav {
+  text-align: right;
+  font-size: smaller;
+  margin: 4% 0% 0% 0%;
+  background: var(--default-bg);
+  width: fit-content;
+  padding: 2% 4% 1% 4%;
+  border-radius: 1em 1em 0em 0em;
+  box-shadow: 20px 20px 60px var(--print-gray), -10px -10px 60px white;
+  height: 4em;
+  margin-bottom: -2.4em;
+}
+
+nav a {
+  color: var(--text-blue);
+  padding: 1em;
+}
+a {
+  text-decoration: none;
+  font-weight: bolder;
+}
+a:hover {
+  color: var(--hovercolor);
+}
+
+footer {
+  padding: 3em;
+  text-align: center;
+}
+
+article {
+  background-color: var(--default-bg);
+  padding: 2em;
+  box-shadow: 0px 20px 60px var(--print-gray), -1px -1px 60px white;
+  padding: 10%;
+  border-radius: 1em;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--text-blue);
+  margin: 0;
+}
+
+ol {
+  list-style: none;
+  counter-reset: index-counter;
+  border: solid 1px var(--text-blue);
+  width: fit-content;
+  padding: 1em;
+  border-radius: 1em;
+}
+ol li {
+  counter-increment: index-counter;
+}
+ol li::before {
+  content: counter(index-counter);
+  color: white;
+  background-color: var(--text-blue);
+  padding: 0.1em 0.4em 0.1em 0.4em;
+  border-radius: 1em;
+  display: inline-block;
+  margin: 0.2em;
+  font-weight: bold;
+}
+
+li a {
+  text-decoration: none;
+  color: var(--text-blue);
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin: 2em -1em 1em -1em;
+  font-size: large;
+  color: var(--text-blue);
+  border-radius: 1em;
+  background: var(--default-bg);
+  box-shadow: inset 20px 20px 60px #c9c9c9, inset -20px -20px 60px white;
+  padding: 8px;
+}
+
+.step-number {
+  display: inline-block;
+  border-radius: 1em;
+  font-weight: bolder;
+  font-size: large;
+  background-color: var(--text-blue);
+  color: var(--text-blue);
+  padding: 0.2em 1em 0.2em 1em;
+  margin-right: 1em;
+  background: linear-gradient(145deg, #fefefe, #c9c9c9);
+  box-shadow: 20px 20px 60px #c9c9c9, -20px -20px 60px white;
+}
+
+.info {
+  font-style: italic;
+  color: var(--text-blue);
+  margin: 1em;
+  display: flex;
+}
+
+.info::before {
+  content: "ⓘ";
+  font-style: normal;
+  font-size: 2em;
+  margin-right: 0.2em;
+  align-self: center;
+}
+
+fieldset {
+  max-width: fit-content;
+  padding: 1em;
+  border-radius: 1em;
+  border: solid 2px var(--pen-blue);
+}
+fieldset:hover {
+  background: var(--default-bg);
+  box-shadow: inset 5px 5px 15px #c9c9c9, inset -5px -5px 15px white;
+  border: solid 2px var(--hovercolor);
+}
+fieldset:hover > legend {
+  color: var(--hovercolor);
+}
+legend {
+  font-family: "Handlee", cursive;
+  color: var(--pen-blue);
+  font-weight: bolder;
+}
+label {
+  font-style: italic;
+  text-align: right;
+}
+
+.cheque-paper {
+  background-color: white;
+  padding: 0.2em 2em 0.2em 2em;
+  margin: auto;
+  box-shadow: 3px 3px 10px var(--print-gray), -3px -3px 60px white;
+  max-width: fit-content;
+  border-radius: 1em 1em 0 0;
+}
+
+.printed-box {
+  display: inline-block;
+  padding: 0.5em 0.2em 0.5em 0.2em;
+  border: solid 2px black;
+  width: 10em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.printed {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: black;
+  font-size: small;
+}
+
+.euro {
+  display: inline-block;
+  color: var(--print-gray);
+  font-size: 3em;
+  vertical-align: top;
+}
+
+.printed-underline {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--print-gray);
+}
+
+.handwritting {
+  font-family: "Handlee", cursive;
+  color: var(--pen-blue);
+  font-size: x-large;
+}
+
+.handwritting-line:after {
+  content: "⎯ ⎯⎯ ⎯⎯⎯ ⎯⎯⎯⎯⎯⎯⎯";
+}

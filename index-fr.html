@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment remplir un chèque en France</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="remplir-cheque.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index-fr.html">Français</a>
+        |
+        <a href="index-en.html">English</a>
+        |
+        <a href="index-es.html">Español</a>
+      </nav>
+    </header>
+    <article>
+      <h1>Comment remplir un chèque en France</h1>
+      <section id="index">
+        <p>
+          Contrairement à d'autres pays où ils sont peut-être en voie de
+          disparition, les chèques sont largement utilisés en France, ou la
+          plupart des banques remettent le carnet de chèques ou «chéquier»
+          gratuitement à leurs clients. Un chèque est lié à votre compte
+          bancaire, mais il n'est valable que s'il est correctement rempli et
+          signé par le titulaire du compte bancaire.
+        </p>
+        <p>
+          Remplir un chèque reste assez simple à condition de suivre
+          correctement certaines étapes clés :
+        </p>
+        <ol>
+          <li><a href="#step1">Inscrivez le montant à payer</a></li>
+          <li><a href="#step2">Puis la somme en toutes lettres</a></li>
+          <li><a href="#step3">Indiquez le nom du bénéficiaire</a></li>
+          <li><a href="#step4">Indiquez le lieu et la date</a></li>
+          <li><a href="#step5">Signez votre chèque</a></li>
+        </ol>
+      </section>
+      <section id="step1">
+        <h2><span class="step-number">1</span>Inscrivez le montant à payer</h2>
+        <p>
+          Dans la grande case aux contours épais sur la partie droite du chèque,
+          inscrivez la somme exacte due en chiffes. Écrivez le premier chiffre
+          du montant le plus à gauche possible afin d’éviter tout risque de
+          fraude. Ensuite, remplacez l’espace restant avec un trait horizontal
+        </p>
+        <div class="cheque-paper">
+          <span class="printed-box">
+            <span
+              id="remplir-cheque-numeric"
+              class="handwritting handwritting-line"
+              >42,00</span
+            >
+          </span>
+          <span class="printed euro">€</span>
+        </div>
+        <p>Vous pouvez observer les exemples de cette page avec un montant différent:</p>
+        <fieldset>
+          <legend>Simulation d'écriture manuscrite</legend>
+          <label for="remplir-cheque-input">Montant à payer:</label>
+          <input
+            id="remplir-cheque-input"
+            type="number"
+            step="0.01"
+            value="42"
+          />
+          €
+        </fieldset>
+      </section>
+      <section id="step2">
+        <h2><span class="step-number">2</span>Puis la somme en toutes lettres</h2>
+        <p>
+          Sur la partie haute du chèque et à côté de la mention
+          <b>«Payez contre ce chèque»</b>, inscrivez la somme due en toutes 
+          lettres. Il est possible de écriver les centimes en chiffres. 
+        </p>
+        <p>
+          Une fois la somme notée, remplacez l’espace restant avec un trait horizontal.
+        </p>
+        <div class="cheque-paper">
+          <span class="printed">Payez contre ce chèque </span>
+          <span
+            id="remplir-cheque-text"
+            class="handwritting printed-underline handwritting-line"
+            >quarente-deux euros</span
+          >
+        </div>
+        <p class="info">
+          Notez que la plupart des banques acceptent les chèques remplis dans d'autres 
+          langues, même avec des chiffres. Toutefois, si quelqu'un modifie les chiffres, 
+          il est difficile de prouver la falsification.
+        </p>
+      </section>
+      <section id="step3">
+        <h2>
+          <span class="step-number">3</span>Indiquez le nom du bénéficiaire
+        </h2>
+        <p>
+          Juste en dessous de la zone où vous venez de remplir la somme en toutes 
+          lettres, sur la ligne qui commence par <b>«à»</b>, inscrivez le nom du 
+          bénéficiaire. 
+        </p>
+        <div class="cheque-paper">
+          <span class="printed">à</span>
+          <span class="handwritting printed-underline">OpenClassrooms</span>
+        </div>
+        <p class="info">
+          Si vous n’êtes pas vraiment sûr de savoir quoi écrire dans cette partie, 
+          attendez avant de remplir le reste du chèque. Cela évitera que si vous 
+          égarez votre chèque, la personne qui le trouve puisse y inscrire son nom
+           et l’encaisser !
+        </p>
+      </section>
+      <section id="step4">
+        <h2><span class="step-number">4</span>Indiquez le lieu et la date</h2>
+        <p>
+          Le lieu d’émission sur la ligne commençant par <b>«À»</b> 
+          ou <b>«Fait à»</b>. 
+          Il s’agit du nom de la ville dans laquelle vous vous trouvez lorsque 
+          vous remplissez le chèque.
+        </p>
+        <p>
+          La date d’émission sur la ligne commençant par <b>«le»</b>. Il s'agit 
+          ici du jour auquel vous allez remettre votre chèque à son destinataire. 
+        </p>
+        <div class="cheque-paper">
+          <p>
+            <span class="printed">Fait à </span>
+            <span class="handwritting printed-underline">Paris</span>
+          </p>
+          <p>
+            <span class="printed">le </span>
+            <span
+              id="remplir-cheque-date"
+              class="handwritting printed-underline"
+              >DD/MM/YYYY</span
+            >
+          </p>
+        </div>
+        <p class="info">
+          Rappel: Tous les chèques sont valables durant 1 an et 8 jours.
+          Il est légalement interdit de les antidater ou de les post-dater.
+        </p>
+      </section>
+      <section id="step5">
+        <h2><span class="step-number">5</span>Signez votre chèque</h2>
+        <p>
+          Avant de signer, détachez votre chèque du chéquier. Cela permet d'éviter 
+          que la marque de signature de votre chèque ne se retrouve sur le chèque 
+          suivant, ce qui pourrait permettre d'imiter votre signature en cas de 
+          perte ou de vol de votre chéquier.
+        </p>
+        <p>
+          La signature doit être la même que vous avez présentée à votre banque 
+          à l'ouverture de votre compte.
+        </p>
+      </section>
+    </article>
+    <footer>
+      <p>Créé en 2021 - <a href="https://github.com/raranguren/remplir-un-cheque">Github</a></p>
+    </footer>      
+  </body>
+</html>
