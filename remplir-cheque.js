@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+if (typeof window !== 'undefined') window.addEventListener("load", function() {
   class Model {
     constructor() {
       this._amount = 0;
@@ -92,6 +92,11 @@ window.addEventListener("load", function() {
 
 // UTILS
 function integerToFrench(number) {
+  if (!isFinite(number) || isNaN(number) || number < 0) {
+    return "";
+  }
+  number = Math.trunc(number);
+  
   if (number <= 16)
     return [
       "zéro",
@@ -109,24 +114,25 @@ function integerToFrench(number) {
       "douze",
       "treize",
       "quatorze",
-      "quince",
+      "quinze",
       "seize",
     ][number];
   if (number < 100) {
     var units = number % 10;
     var tens = Math.trunc(number / 10);
+    var useEt = units == 1 && tens != 8 && tens != 9;
     if (tens == 7 || tens == 9) {
       tens--;
       units += 10;
     }
-    var separator = units == 1 && tens < 8 ? " et " : "-";
+    var separator = useEt ? " et " : "-";
     return (
       [
         "",
         "dix",
         "vingt",
         "trente",
-        "quarente",
+        "quarante",
         "cinquante",
         "soixante",
         "soixante-dix",
@@ -153,24 +159,35 @@ function integerToFrench(number) {
       (rest == 0 ? "" : " " + integerToFrench(rest))
     );
   }
-  var text = "";
-  var count = 0;
-  while (number > 0) {
-    text =
-      integerToFrench(number % 1_000_000) +
-      " " +
-      ["", "millons", "billons", "trillons"][count] +
-      " " +
-      text;
-    number = Math.trunc(number / 1_000_000);
-    count++;
+
+  if (number >= 1_000_000_000_000) {
+    var billions = Math.trunc(number / 1_000_000_000_000);
+    var rest = number % 1_000_000_000_000;
+    return (
+      integerToFrench(billions) +
+      " billion" + (billions > 1 ? "s" : "") +
+      (rest > 0 ? " " + integerToFrench(rest) : "")
+    );
   }
-  return text;
+  if (number >= 1_000_000_000) {
+    var milliards = Math.trunc(number / 1_000_000_000);
+    var rest = number % 1_000_000_000;
+    return (
+      integerToFrench(milliards) +
+      " milliard" + (milliards > 1 ? "s" : "") +
+      (rest > 0 ? " " + integerToFrench(rest) : "")
+    );
+  }
+  if (number >= 1_000_000) {
+    var millions = Math.trunc(number / 1_000_000);
+    var rest = number % 1_000_000;
+    return (
+      integerToFrench(millions) +
+      " million" + (millions > 1 ? "s" : "") +
+      (rest > 0 ? " " + integerToFrench(rest) : "")
+    );
+  }
+  return "";
 }
 
-/* TEST
-for (var i = 0; i < 10000; i++) console.log(i + ": " + integerToFrench(i));
-console.log(
-  Number.MAX_SAFE_INTEGER + ": " + integerToFrench(Number.MAX_SAFE_INTEGER)
-);
-// */
+if (module) module.exports = { integerToFrench }
