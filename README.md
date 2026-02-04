@@ -9,6 +9,9 @@ Here are examples of the script integrated in a blog page:
 - [Demo: guide for foreigners in France](https://raranguren.github.io/remplir-un-cheque/index-en.html)
 - [Barebone test page](https://raranguren.github.io/remplir-un-cheque/test.html)
 
+[<img width="491" height="371" alt="image" src="https://github.com/user-attachments/assets/9a533adc-4328-441b-aee5-6029e8dcb1b5" />](https://raranguren.github.io/remplir-un-cheque/index-en.html)
+
+
 ## Usage
 
 1. Import the script in the document:
