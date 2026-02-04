@@ -1,7 +1,7 @@
 # remplir-un-cheque
 A simple library to display a French cheque calculator in any website.
 
-Tested intensivly for compatibility with the 1990 rectifications de l’orthographe.
+Tested intensively for compatibility with the 1990 rectifications de l’orthographe.
 
 ## Demo
 
@@ -11,7 +11,7 @@ Here are examples of the script integrated in a blog page:
 
 ## Usage
 
-1. Inport the script in the document:
+1. Import the script in the document:
     ```html
     <script src="remplir-cheque.js"></script>
     ```
