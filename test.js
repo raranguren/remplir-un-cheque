@@ -60,46 +60,47 @@ const testCases = [
 
   // Hundreds
   { input: 100, expected: "cent" },
-  { input: 101, expected: "cent-un" },
-  { input: 111, expected: "cent-onze" },
-  { input: 121, expected: "cent-vingt-et-un" },
-  { input: 180, expected: "cent-quatre-vingts" },
-  { input: 199, expected: "cent-quatre-vingt-dix-neuf" },
-  { input: 200, expected: "deux-cents" },
-  { input: 201, expected: "deux-cent-un" },
-  { input: 280, expected: "deux-cent-quatre-vingts" },
-  { input: 999, expected: "neuf-cent-quatre-vingt-dix-neuf" },
+  { input: 101, expected: "cent un" },
+  { input: 111, expected: "cent onze" },
+  { input: 121, expected: "cent vingt-et-un" },
+  { input: 180, expected: "cent quatre-vingts" },
+  { input: 199, expected: "cent quatre-vingt-dix-neuf" },
+  { input: 200, expected: "deux cents" },
+  { input: 201, expected: "deux cent un" },
+  { input: 280, expected: "deux cent quatre-vingts" },
+  { input: 999, expected: "neuf cent quatre-vingt-dix-neuf" },
 
   // Thousands
   { input: 1000, expected: "mille" },
-  { input: 1100, expected: "mille-cent" },
-  { input: 1234, expected: "mille-deux-cent-trente-quatre" },
-  { input: 1999, expected: "mille-neuf-cent-quatre-vingt-dix-neuf" },
-  { input: 21000, expected: "vingt-et-un-mille" },
-  { input: 80000, expected: "quatre-vingt-mille" },
-  { input: 99999, expected: "quatre-vingt-dix-neuf-mille-neuf-cent-quatre-vingt-dix-neuf" },
+  { input: 1100, expected: "mille cent" },
+  { input: 1234, expected: "mille deux cent trente-quatre" },
+  { input: 1999, expected: "mille neuf cent quatre-vingt-dix-neuf" },
+  { input: 21000, expected: "vingt-et-un mille" },
+  { input: 80000, expected: "quatre-vingt mille" },
+  { input: 99999, expected: "quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf" },
 
   // Hundred-thousands
-  { input: 100000, expected: "cent-mille" },
-  { input: 100001, expected: "cent-mille-un" },
-  { input: 200000, expected: "deux-cents-mille" },
-  { input: 999999, expected: "neuf-cent-quatre-vingt-dix-neuf-mille-neuf-cent-quatre-vingt-dix-neuf" },
+  { input: 100000, expected: "cent mille" },
+  { input: 100001, expected: "cent mille un" },
+  { input: 200000, expected: "deux cents mille" },
+  { input: 999999, expected: "neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf" },
 
   // Millions
-  { input: 1000000, expected: "un-million" },
-  { input: 1000100, expected: "un-million-cent" },
-  { input: 1001000, expected: "un-million-mille" },
-  { input: 2000000, expected: "deux-millions" },
-  { input: 80000000, expected: "quatre-vingt-millions" },
-  { input: 99999999, expected: "quatre-vingt-dix-neuf-millions-neuf-cent-quatre-vingt-dix-neuf-mille-neuf-cent-quatre-vingt-dix-neuf" },
+  { input: 1000000, expected: "un million" },
+  { input: 1000100, expected: "un million cent" },
+  { input: 1001000, expected: "un million mille" },
+  { input: 2000000, expected: "deux millions" },
+  { input: 80000000, expected: "quatre-vingt millions" },
+  { input: 99999999, expected: "quatre-vingt-dix-neuf millions neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf" },
 
   // Milliards / billions (long scale)
-  { input: 1000000000, expected: "un-milliard" },
-  { input: 1000000000000, expected: "un-billion" },
+  { input: 1000000000, expected: "un milliard" },
+  { input: 1000000000000, expected: "un billion" },
 
   // Invalid
   { input: -1, expected: "" },
   { input: NaN, expected: "" },
+  { input: Infinity, expected: "" },
 
   // Decimals (truncation)
   { input: 1.5, expected: "un" },

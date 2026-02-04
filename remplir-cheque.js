@@ -125,46 +125,71 @@ function integerToFrench(number) {
       tens--;
       units += 10;
     }
-    var separator = useEt ? " et " : "-";
-    return (
-      [
-        "",
-        "dix",
-        "vingt",
-        "trente",
-        "quarante",
-        "cinquante",
-        "soixante",
-        "soixante-dix",
-        "quatre-vingts",
-        "quatre-vingts-dix",
-      ][tens] + (units > 0 ? separator + integerToFrench(units) : "")
-    );
+    var separator = useEt ? "-et-" : "-";
+    var tensWord = [
+      "",
+      "dix",
+      "vingt",
+      "trente",
+      "quarante",
+      "cinquante",
+      "soixante",
+      "soixante-dix",
+      "quatre-vingt",
+      "quatre-vingt-dix",
+    ][tens];
+    
+    if (tens == 8 && units == 0) {
+      tensWord = tensWord + "s";
+    }
+    
+    return tensWord + (units > 0 ? separator + integerToFrench(units) : "");
   }
   if (number < 1_000) {
     var hundreds = Math.trunc(number / 100);
     var rest = number % 100;
-    return (
-      (hundreds > 1 ? integerToFrench(hundreds) + " " : "") +
-      "cent" +
-      (rest == 0 ? "s" : " " + integerToFrench(rest))
-    );
+    var result = "";
+    
+    if (hundreds == 1) {
+      result = "cent";
+    } else {
+      result = integerToFrench(hundreds) + " cent";
+      if (rest == 0) {
+        result += "s";
+      }
+    }
+    
+    if (rest > 0) {
+      result += " " + integerToFrench(rest);
+    }
+    
+    return result;
   }
   if (number < 1_000_000) {
     var thousands = Math.trunc(number / 1_000);
     var rest = number % 1_000;
+    var thousandsWord = thousands > 1 ? integerToFrench(thousands) : "";
+
+    if (thousandsWord.endsWith("quatre-vingts")) {
+      thousandsWord = thousandsWord.slice(0, -1);
+    }
     return (
-      (thousands > 1 ? integerToFrench(thousands) + " " : "") +
+      (thousands > 1 ? thousandsWord + " " : "") +
       "mille" +
-      (rest == 0 ? "" : " " + integerToFrench(rest))
+      (rest > 0 ? " " + integerToFrench(rest) : "")
     );
   }
 
   if (number >= 1_000_000_000_000) {
     var billions = Math.trunc(number / 1_000_000_000_000);
     var rest = number % 1_000_000_000_000;
+    var billionsWord = integerToFrench(billions);
+
+    if (billionsWord.endsWith("quatre-vingts")) {
+      billionsWord = billionsWord.slice(0, -1);
+    }
     return (
-      integerToFrench(billions) +
+      billionsWord +
       " billion" + (billions > 1 ? "s" : "") +
       (rest > 0 ? " " + integerToFrench(rest) : "")
     );
@@ -172,8 +197,13 @@ function integerToFrench(number) {
   if (number >= 1_000_000_000) {
     var milliards = Math.trunc(number / 1_000_000_000);
     var rest = number % 1_000_000_000;
+    var milliardsWord = integerToFrench(milliards);
+
+    if (milliardsWord.endsWith("quatre-vingts")) {
+      milliardsWord = milliardsWord.slice(0, -1);
+    }
     return (
-      integerToFrench(milliards) +
+      milliardsWord +
       " milliard" + (milliards > 1 ? "s" : "") +
       (rest > 0 ? " " + integerToFrench(rest) : "")
     );
@@ -181,8 +211,13 @@ function integerToFrench(number) {
   if (number >= 1_000_000) {
     var millions = Math.trunc(number / 1_000_000);
     var rest = number % 1_000_000;
+    var millionsWord = integerToFrench(millions);
+    
+    if (millionsWord.endsWith("quatre-vingts")) {
+      millionsWord = millionsWord.slice(0, -1);
+    }
     return (
-      integerToFrench(millions) +
+      millionsWord +
       " million" + (millions > 1 ? "s" : "") +
       (rest > 0 ? " " + integerToFrench(rest) : "")
     );
